@@ -20,18 +20,22 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    exact: true,
   },
   {
     path: "/register",
     element: <Register />,
+    exact: true,
   },
   {
     path: "/login",
     element: <Login />,
+    exact: true,
   },
   {
     path: '/dashboard',
     element: <ProtectedRoutes><Dashboard /></ProtectedRoutes>,
+    exact: true,
     children: [
       {
         index: true,
@@ -40,8 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/add-contact",
         element: <AddContact />
-      }
-      ,
+      },
       {
         path: "/dashboard/edit-contact/:id",
         element: <EditContact />
@@ -51,10 +54,12 @@ const router = createBrowserRouter([
   {
     path: "/logout",
     element: <Logout />,
+    exact: true,
   },
   {
     path: "*",
-    element: <NotFound />
+    element: <NotFound />,
+    exact: true,
   }
 ]);
 
@@ -63,7 +68,7 @@ const App = () => {
   useEffect(() => {
     axios.get('https://contactms-api-flame.vercel.app/contactmsyt/verify', {
       headers: {
-        Authorization: `Berear ${localStorage.getItem('token')}`
+        Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
     .then(res => {
