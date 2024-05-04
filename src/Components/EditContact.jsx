@@ -26,7 +26,7 @@ const EditContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("https://contactms-api-flame.vercel.app/update-contact/"+id, values, {
+    .put("http://localhost:3000/contactmsyt/update-contact/"+id, values, {
         headers: {
           Authorization: `Berear ${localStorage.getItem('token')}`
         }

@@ -61,7 +61,7 @@ const router = createBrowserRouter([
 const App = () => {
   const [user, setUser] = useState();
   useEffect(() => {
-    axios.get('https://contactms-api-flame.vercel.app/contactmsyt/verify', {
+    axios.get('http://localhost:5173/contactmsyt/verify', {
       headers: {
         Authorization: `Berear ${localStorage.getItem('token')}`
       }

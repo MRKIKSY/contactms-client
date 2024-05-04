@@ -25,7 +25,7 @@ const Register = () => {
     const errs = Validation(values)
     setErrors(errs)
     if(errs.name === "" && errs.email === "" && errs.password === "") {
-      axios.post('https://contactms-api-flame.vercel.app/register', values)
+      axios.post('http://localhost:3000/contactmsyt/register', values)
       .then(res=> {
         if(res.data.success) {
           toast.success("Account Created Successfully", {
