@@ -91,7 +91,7 @@ const Contacts = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3000/contactmsyt/contacts", {
+      .get("https://contactms-api-flame.vercel.app/contactmsyt/contacts", {
         headers: {
           Authorization: `Berear ${localStorage.getItem("token")}`,
         },

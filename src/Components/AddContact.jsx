@@ -25,7 +25,7 @@ const AddContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-    .post("http://localhost:3000/contactmsyt/add-contact", values, {
+    .post("https://contactms-api-flame.vercel.app/contactmsyt/add-contact", values, {
         headers: {
           Authorization: `Berear ${localStorage.getItem('token')}`
         }
